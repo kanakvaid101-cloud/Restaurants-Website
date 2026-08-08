@@ -10,4 +10,16 @@ try {
 
 }
 
-export {fetchapi}
+async function fetchapibyid(id) {
+
+try {
+ const response = await fetch(`https://dummyjson.com/recipes/${id}`)
+  const data = await response.json();
+  return data 
+} catch (error) {
+  return[]
+}
+
+}
+
+export {fetchapi,fetchapibyid}
